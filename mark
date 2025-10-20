@@ -1,0 +1,36 @@
+我刚刚尝试了新的配置，它对我有用。我找到了这篇文章并复制了配置。现在我再也检测不到了：
+
+config = {
+    "window.outerHeight": 1056,
+    "window.outerWidth": 1920,
+    "window.innerHeight": 1008,
+    "window.innerWidth": 1920,
+    "window.history.length": 4,
+    "navigator.userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0",
+    "navigator.appCodeName": "Mozilla",
+    "navigator.appName": "Netscape",
+    "navigator.appVersion": "5.0 (Windows)",
+    "navigator.oscpu": "Windows NT 10.0; Win64; x64",
+    "navigator.language": "de-DE",
+    "navigator.languages": ["de-DE"],
+    "navigator.platform": "Win32",
+    "navigator.hardwareConcurrency": 12,
+    "navigator.product": "Gecko",
+    "navigator.productSub": "20030107",
+    "navigator.maxTouchPoints": 10,
+}
+
+async with AsyncCamoufox(
+        config=config,
+        geoip=True,
+        locale="de-DE",
+        os=["windows", "macos"],
+    ) as browser:
+
+我也进行类人打字，并使用 humancursor_playwright 库来模拟人类行为。也许设置一下humanize=True和使用 humancursor_playwright 包一样有效。我的类人打字是这样的：
+
+# Enter search_value to google search combobox
+for char in search_value:
+    await search_field.type(char)
+    # random pause 50-200 ms
+    sleep(random.uniform(0.05, 0.2))
